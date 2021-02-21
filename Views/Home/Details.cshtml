@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dish Detail</title>
+</head>
+@{
+    Dish dishDetail = ViewBag.Details;
+}
+<body>
+    <div class="text-center">
+        <a href="/"><h3>Home</h3></a>
+        <h1>DishName: @dishDetail.DishName</h1>
+        <h2>ChefName: @dishDetail.ChefName</h2> 
+        <br/>
+        <br/>
+        <h3>Comment : @dishDetail.Description</h3>
+        <h3>Calories : @dishDetail.Calories</h3>
+        <h3>Tastiness : @dishDetail.Tasty</h3>
+
+        @* <form action="delete/@dishDetail.DishId"method="get">
+            <button>Delete</button>
+        </form> *@
+
+        <a href="/delete/@dishDetail.DishId">Delete</a>
+        <a href="/edit/@dishDetail.DishId">Edit</a>
+            
+        @* <form action="edit/@dishDetail.DishId">
+            <button class="btn btn-primary">Edit</button>
+        </form> *@
+        
+    </div>
+    
+    
+</body>
+</html>

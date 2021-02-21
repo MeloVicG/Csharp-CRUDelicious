@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Dish</title>
+</head>
+@* have to import for asp-for to work *@
+@model Dish
+<body>
+    <div class="text-center">
+        <h1>Edit DishName</h1>
+        <a href="/"><h3>Home</h3></a>
+
+        <form action="/update" method="post">
+        @* telling backend which data to update *@
+            <input type="hidden" name="DishId" value="@Model.DishId">
+            <div class="text-center">
+                <div>
+                    <label asp-for="ChefName"></label>
+                    <input asp-for="ChefName" type="text">
+                    <span asp-validation-for="ChefName"></span>
+                </div>
+                <div>
+                    <label asp-for="DishName"></label>
+                    <input asp-for="DishName" type="text" >
+                    <span asp-validation-for="DishName"></span>
+                </div>
+                <div>
+                    <label asp-for="Calories"></label>
+                    <input asp-for="Calories" type="text" >
+                    <span asp-validation-for="Calories"></span>
+                </div>
+                <div>
+                    <label asp-for='Tasty'></label>
+                    <select asp-for='Tasty' type='text' >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <span asp-validation-for='Tasty'></span>
+                </div>
+                <div>
+                    <label asp-for='Description'></label>
+                    <input asp-for='Description' type='text'>
+                    <span asp-validation-for='Description'></span>
+                </div>
+            </div>
+
+            <button>Edit Dish</button>
+        </form>
+
+    </div>    
+</body>
+</html>
