@@ -6,18 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Dish</title>
 </head>
+@* @model Chef *@
 @model Dish
 <body>
+    
     <div class="text-center">
         <h1>Add a New Dish</h1>
         <a href="/"><h3>Home</h3></a>
 
-        <form action="/create" method="post">
+        <form action="/new-dish-process" method="post">
             <div class="text-center">
                 <div>
-                    <label asp-for="ChefName"></label>
+                    @* <label asp-for="ChefName"></label>
                     <input asp-for="ChefName" type="text">
-                    <span asp-validation-for="ChefName"></span>
+                    <span asp-validation-for="ChefName"></span> *@
+                    <select asp-for="ChefId">
+                        <option value="">Please</option>
+                        @foreach(var Chef in ViewBag.Chefs)
+                        {
+                            <option value="@Chef.ChefId">@Chef.ChefName</option>
+                            //cant loop through a chef if no dish created with Chef.DishChef.ChefName
+                        }
+                    </select>
                 </div>
                 <div>
                     <label asp-for="DishName"></label>
@@ -31,7 +41,7 @@
                 </div>
                 <div>
                     <label asp-for='Tasty'></label>
-                    <select asp-for='Tasty' type='text' >
+                    <select asp-for='Tasty' type='text'>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

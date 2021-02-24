@@ -14402,6 +14402,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\M3L0V1CG41\\Desktop\\Coding_Dojo\\C#\\MVCII\\Crudelicious\\Views\\Home\\NewChef.cshtml",
+      "TargetPath": "Views\\Home\\NewChef.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\M3L0V1CG41\\Desktop\\Coding_Dojo\\C#\\MVCII\\Crudelicious\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -14409,6 +14414,11 @@
     {
       "FilePath": "c:\\Users\\M3L0V1CG41\\Desktop\\Coding_Dojo\\C#\\MVCII\\Crudelicious\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\M3L0V1CG41\\Desktop\\Coding_Dojo\\C#\\MVCII\\Crudelicious\\Views\\Home\\NewDish.cshtml",
+      "TargetPath": "Views\\Home\\NewDish.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14422,11 +14432,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\M3L0V1CG41\\Desktop\\Coding_Dojo\\C#\\MVCII\\Crudelicious\\Views\\Home\\News.cshtml",
-      "TargetPath": "Views\\Home\\News.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\M3L0V1CG41\\Desktop\\Coding_Dojo\\C#\\MVCII\\Crudelicious\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -14434,6 +14439,11 @@
     {
       "FilePath": "c:\\Users\\M3L0V1CG41\\Desktop\\Coding_Dojo\\C#\\MVCII\\Crudelicious\\Views\\Home\\Edit.cshtml",
       "TargetPath": "Views\\Home\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\M3L0V1CG41\\Desktop\\Coding_Dojo\\C#\\MVCII\\Crudelicious\\Views\\Home\\Dishes.cshtml",
+      "TargetPath": "Views\\Home\\Dishes.cshtml",
       "FileKind": "mvc"
     },
     {

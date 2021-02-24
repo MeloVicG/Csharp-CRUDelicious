@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
+using Microsoft.EntityFrameworkCore;
 using Crudelicious.Models;
 
 namespace Crudelicious.Controllers
@@ -23,37 +24,100 @@ namespace Crudelicious.Controllers
             // _logger = logger;
             _context = context;
         }
+
+        //cannot get Age to show on Index Page
+        //cannot get Dish validations to work
     //------------------------------------------------------------
         [HttpGet("")]
         public IActionResult Index()
         {
 
-            ViewBag.Dishes = _context.Dishes;
+            ViewBag.Chefs = _context.Chefs
+            .Include(d => d.Dishes);
             // .ToList();
 
             
             return View();
         }
     //------------------------------------------------------------
-        [HttpGet("news")]
-        public IActionResult News()
+    //new chef page
+        [HttpGet("dishes")]
+        public IActionResult Dishes()
         {
+            ViewBag.Dishes = _context.Dishes
+            .Include(d => d.DishChef);
             return View();
         }
-        //method to show form
     //------------------------------------------------------------
-        //another method to process form
-        [HttpPost("create")]
+        [HttpGet("new-dish")]
+        public IActionResult NewDish()
+        {
+            ViewBag.Chefs = _context.Chefs;
+
+        //no use for this in create
+            // ViewBag.Dishes = _context.Dishes
+            // .Include(d => d.DishChef);
+            return View();
+        }
+    //------------------------------------------------------------
+    //add a Chef page
+        [HttpGet("new-chef")]
+        public IActionResult NewChef()
+        {
+            ViewBag.Dishes = _context.Dishes;
+            return View();
+        }
+    //---------------------------------------------------------
+        [HttpPost("new-chef-process")]
+        public IActionResult NewChefProcess(Chef NewChef)
+        {
+
+
+            int age = DateTime.Now.Year - NewChef.DateOfBirth.Year;
+
+            if(NewChef.DateOfBirth > DateTime.Today)
+            {
+                ModelState.AddModelError("DateOfBirth", "Not a future Date");
+                return View("NewChef");
+            }
+            if(age < 18)
+            {
+                ModelState.AddModelError("DateOfBirth", "Junior Chef are not allowed");
+                return View("NewChef");
+            }
+
+            if(ModelState.IsValid)
+            {
+                _context.Add(NewChef);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+    //------------------------------------------------------------
+        //Create Dish Process
+        [HttpPost("new-dish-process")]
         public IActionResult News(Dish dishToCook) //string ChefName, string DishName == only need to take in Dish
         {
+                // ViewBag.Dishes = _context.Dishes
+                // .Include(d => d.DishChef);
+
             //add to DB
             if(ModelState.IsValid)
             {
                 _context.Add(dishToCook);
                 _context.SaveChanges();
+            return RedirectToAction("Dishes");
             }
-            return RedirectToAction("Index");
+            else
+            {
+                return View("NewDish");
+            }
+            
+            
+            
         }
+    //------------------------------------------------------------
     //------------------------------------------------------------
         [HttpGet("detail/{id}")]
         public IActionResult Details(int id)
@@ -82,11 +146,11 @@ namespace Crudelicious.Controllers
                 .Dishes
                 .FirstOrDefault(deesh => deesh.DishId == updateDish.DishId);
 
-            DishToUpdate.ChefName = updateDish.ChefName;
-            DishToUpdate.DishName = updateDish.DishName;
-            DishToUpdate.Calories = updateDish.Calories;
-            DishToUpdate.Tasty = updateDish.Tasty;
-            DishToUpdate.Description = updateDish.Description;
+            // DishToUpdate.ChefName = updateDish.ChefName;
+            // DishToUpdate.DishName = updateDish.DishName;
+            // DishToUpdate.Calories = updateDish.Calories;
+            // DishToUpdate.Tasty = updateDish.Tasty;
+            // DishToUpdate.Description = updateDish.Description;
 
             _context.SaveChanges();
 
@@ -104,6 +168,7 @@ namespace Crudelicious.Controllers
 
             return RedirectToAction("Index");
         }
+    //------------------------------------------------------------
     //------------------------------------------------------------
 
 

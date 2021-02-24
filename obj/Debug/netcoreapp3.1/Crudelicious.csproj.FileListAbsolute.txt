@@ -59,5 +59,7 @@ C:\Users\M3L0V1CG41\Desktop\Coding_Dojo\C#\MVCII\Crudelicious\obj\Debug\netcorea
 C:\Users\M3L0V1CG41\Desktop\Coding_Dojo\C#\MVCII\Crudelicious\obj\Debug\netcoreapp3.1\Crudelicious.pdb
 C:\Users\M3L0V1CG41\Desktop\Coding_Dojo\C#\MVCII\Crudelicious\obj\Debug\netcoreapp3.1\Crudelicious.genruntimeconfig.cache
 C:\Users\M3L0V1CG41\Desktop\Coding_Dojo\C#\MVCII\Crudelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\edit.cshtml.g.cs
-C:\Users\M3L0V1CG41\Desktop\Coding_Dojo\C#\MVCII\Crudelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\News.cshtml.g.cs
 C:\Users\M3L0V1CG41\Desktop\Coding_Dojo\C#\MVCII\Crudelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
+C:\Users\M3L0V1CG41\Desktop\Coding_Dojo\C#\MVCII\Crudelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dishes.cshtml.g.cs
+C:\Users\M3L0V1CG41\Desktop\Coding_Dojo\C#\MVCII\Crudelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewDish.cshtml.g.cs
+C:\Users\M3L0V1CG41\Desktop\Coding_Dojo\C#\MVCII\Crudelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewChef.cshtml.g.cs

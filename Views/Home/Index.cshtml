@@ -3,19 +3,36 @@
 }
 
 <div class="text-center">
-    <h1>Welcome to CRUDelicious</h1>
-    <a href="/news">ADD A DISH</a>
+    <div>
+        @* <h1>Welcome to CRUDelicious</h1> *@
+        <h2>Check out our Chefs!</h2>
+        <a class="btn btn-primary"href="/new-chef">ADD A CHEF</a>
+    </div>
+    <a href="/">Chefs</a> |
+    <a href="/dishes">Dishes</a>
 
     <br/>
     <br/>
-    <h4>Check out some recent dishes!</h4>
-
+    <h4>Check out Our Chef Roster</h4>
+@model Chef
     <ul>
-        @foreach (var dish in ViewBag.Dishes)
+        @foreach (var chef in ViewBag.Chefs)
         {
-            <a href="detail/@dish.DishId">
-        <li>@dish.ChefName @dish.DishName</li>
-            </a>
+        <Table class="table table-dark table-sm">
+            <tr>
+                <th scope="col" >Chef Name</th>
+                <th>Age</th>
+                <th># of Dishes</th>
+            </tr>
+            <tr>
+                <a href="detail/@chef.ChefId">
+                    <td>@chef.ChefName</td>
+                    @* <td>@ViewBag.Age</td> *@
+                    <td>@chef.Age</td>
+                    <td>@chef.Dishes.Count</td>
+                </a>
+            </tr>
+        </Table>
         }
     </ul>
 

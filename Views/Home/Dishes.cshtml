@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div>
+        <h1>Chefs N Dishes</h1>
+        <h3>Yum take a look at our dishes!</h3>
+        <a class="btn btn-primary"href="/new-dish">ADD A DISH</a>
+    </div>
+    <a href="/">Chefs</a> |
+    <a href="/dishes">Dishes</a>
+
+    <br/>
+    <br/>
+    <h4>Check out Our Dishes</h4>
+
+    <ul>
+        @foreach (var dish in ViewBag.Dishes)
+        {
+        <Table class="table table-dark table-sm">
+            <tr>
+                <th>Dish Name</th>
+                <th>Chef</th>
+                <th>Tastiness</th>
+                <th>Calories</th>
+            </tr>
+            <tr>
+                <td>@dish.DishName</td>
+                <td>@dish.DishChef.ChefName</td>
+                <td>@dish.Tasty</td>
+                <td>@dish.Calories</td>
+                @*<a href="detail/@dish.DishId">@dish.ChefName @dish.DishName</a> *@
+            </tr>
+        </Table>
+        }
+    </ul>
+
+</div>

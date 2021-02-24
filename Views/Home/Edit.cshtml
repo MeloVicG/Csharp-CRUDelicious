@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+@* <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <title>Edit Dish</title>
 </head>
 @* have to import for asp-for to work *@
-@model Dish
+@*model Dish
 <body>
     <div class="text-center">
         <h1>Edit DishName</h1>
@@ -15,7 +15,7 @@
 
         <form action="/update" method="post">
         @* telling backend which data to update *@
-            <input type="hidden" name="DishId" value="@Model.DishId">
+            @*<input type="hidden" name="DishId" value="@Model.DishId">
             <div class="text-center">
                 <div>
                     <label asp-for="ChefName"></label>
@@ -55,4 +55,4 @@
 
     </div>    
 </body>
-</html>
+</html> *@

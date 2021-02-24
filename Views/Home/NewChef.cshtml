@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chef</title>
+</head>
+@model Chef
+<body>
+    
+    <div class="text-center">
+        <h1>Add a New Chef</h1>
+        <a href="/"><h3>Home</h3></a>
+
+        <form action="/new-chef-process" method="post">
+            <div class="text-center">
+            <div>
+                <label asp-for="ChefName"></label>
+                <input asp-for="ChefName" type="text" >
+                <span asp-validation-for="ChefName"></span>
+            </div>
+            @* <div>
+                <label asp-for="Age"></label>
+                <input asp-for="Age" type="text" >
+                <span asp-validation-for="Age"></span>
+            </div> *@
+            <div>
+                <label asp-for="DateOfBirth"></label>
+                <input asp-for="DateOfBirth" type="date" >
+                <span asp-validation-for="DateOfBirth"></span>
+            </div>
+            </div>
+
+            <button>Submit</button>
+        </form>
+
+    </div>    
+</body>
+</html>
